@@ -11,7 +11,7 @@
         python gsil.py test
 
     :author:    Feei <feei@feei.cn>
-    :homepage:  https://github.com/wufeifei/cobra
+    :homepage:  https://github.com/FeeiCN/GSIL
     :license:   MIT, see LICENSE for more details.
     :copyright: Copyright (c) 2018 Feei. All rights reserved
 """
@@ -26,6 +26,9 @@ if __name__ == '__main__':
             print('python gsil.py <rules_type>')
             exit(0)
         sys.exit(gsil())
+    except KeyboardInterrupt as e:
+        print('Bye')
+        exit(0)
     except Exception as e:
         # 发送异常报告
         content = '{a}\r\n{e}'.format(a=' '.join(sys.argv), e=traceback.format_exc())
